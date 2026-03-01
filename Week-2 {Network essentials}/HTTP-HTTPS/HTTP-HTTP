@@ -1,0 +1,100 @@
+Page 1: System Design & Network Essentials
+System Design:
+Week - I ⇒ Goes parallelly with the DSA. "So Don't worry as the time constraint."
+Week - II ⇒ 01/02/2026 to ...
+"Network Essentials"
+HTTP / HTTPS, TCP/IP, UDP
+DNS Resolution
+TCP-3way handshake
+Rest API's & Status code
+Latency, throughput, Bandwidth
+HTTP (Hyper Text Transfer Protocol):
+HTTP is a web-based protocol used for communication between client and server.
+Communication happens between a web browser & client.
+HTTP Response / Request cycle: If we make a request ←→ You will get a Response.
+Protocol → A protocol is a collection of rules that will allow two systems to communicate.
+By using networking protocols, the computer & server share instructions to understand each other.
+On the Web, the protocol used is known as HTTP.
+
+--------------------------------------------------------------------------------
+Page 2: HTTP Workflow & Drawbacks
+Workflow Diagram:
+Web browser / Client sends a Request through the Internet, which is then sent to the Webserver.
+The Webserver sends a Response back through the Internet to the Web browser / Client.
+Flowchart:
+User will interact with the web browser.
+Web browser will send the request to a server via HTTP.
+It travels through the Internet and reaches the webserver.
+Webserver responds to the web browser via HTTP.
+Through this process, an HTTP request will retrieve Pages, Pictures, and Videos.
+Note on Drawbacks:
+HTTP has a major flaw: It transmits data and information in plaintext.
+If anyone intercepts the connection, they can literally read exactly what is being sent or received.
+As the internet evolves, everyone depends on the web for:
+Personal communication
+Bank accounts
+Social media
+Ecommerce
+This lack of privacy has made security a significant concern.
+
+--------------------------------------------------------------------------------
+Page 3: HTTPS & Encryption
+HTTPS (Hyper Text Transfer Protocol Secure):
+HTTPS comes to overcome the issues of HTTP.
+Rather than communicating text in plaintext format, it uses encrypted communication.
+"So if any interruption occurs, the data cannot be read because it is in an encrypted format".
+HTTPS is built on cryptography protocols: SSL (Secure Socket Layer) and TLS (Transport Layer Security).
+These protocols establish an encrypted connection between your browser & the server.
+When you visit an HTTPS site, the browser first verifies its SSL certificate to ensure it is legitimate.
+This validation allows both parties to establish a secure communication channel.
+Security Comparison:
+No Secure (HTTP): Sending "HELLO" → "HELLO". An eavesdropper could read it in plain text.
+Secure (HTTPS): Sending "HELLO" → Encryption → "EHLLO" → Decryption → "HELLO". No eavesdropping will work because of encryption and decryption.
+The CIA Triad in HTTPS:
+Confidentiality
+Integrity
+Authentication
+
+--------------------------------------------------------------------------------
+Page 4: HTTP Request & Response Structure
+Browser Indicators:
+HTTPS → The browser provides a "Host certificate" (lock icon).
+HTTP → The browser displays a "Not secure" message.
+HTTPS is internationally approved; browsers like Chrome and Edge prioritise it.
+SEO Benefit: Search engines show HTTPS sites at the top of search results.
+HTTP Request Structure:
+Contains the request sent from the client browser to the webserver.
+Components:
+Method (e.g., GET)
+URL
+HEADER (e.g., HOST: example.com)
+BODY
+Example: GET /api/user HTTP/1.1
+HTTP Response Structure:
+Contains the response sent from the webserver to the client browser.
+Components:
+Status code (e.g., 200 OK)
+Header
+Body (JSON) (e.g., Content-Type: application/json)
+
+--------------------------------------------------------------------------------
+Page 5: HTTP Methods & Status Codes
+HTTP Methods:
+GET: Used to fetch data from the webserver.
+POST & PUT: Used to create & update resources.
+POST → Used to create content.
+PUT → Used to update existing data.
+DELETE → Used to delete data.
+Method Categorisation:
+Safe Method: GET (It results in no updates to the webserver).
+Unsafe Method / Idempotent: POST, DELETE, PUT (These will update the data on a webserver).
+HTTP Status Codes: These are responses given by the server back to the client:
+200 ⇒ Successful
+201 ⇒ Created
+204 ⇒ No content (Accidental sent, please delete)
+400 ⇒ Client mistake
+401 ⇒ Unauthorized access
+403 ⇒ Forbidden (No entry)
+404 ⇒ Not found (Page not found)
+429 ⇒ Too many requests
+500 ⇒ Internal Server Error
