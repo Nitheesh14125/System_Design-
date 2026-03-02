@@ -1,0 +1,71 @@
+Page 6: Introduction to TCP & UDP
+TCP & UDP
+Whenever a computer wants to communicate with another computer, the communication between those two computers needs to be good and reliable.
+The goal is to guarantee that data is received correctly.
+Examples:
+If we want to view a webpage, we try to view the file completely.
+Similarly, if we want to download a file, we will download the file complete rather than just a part of a file.
+TCP (Transmission Control Protocol)
+It is the main protocol used in TCP/IP Networks.
+TCP is used to guarantee that all data is received in order.
+Without TCP, some of the data could be missing or out of order.
+Characteristics of TCP:
+Connection-oriented.
+Reliable.
+Ordered delivery.
+Error checking.
+Slower.
+Used In:
+HTTP / HTTPS.
+File downloads.
+Banking apps.
+
+--------------------------------------------------------------------------------
+Page 7: TCP Order & Three-Way Handshake
+Data Structure & Order:
+TCP handles data in a structured way with a proper sequence (Header → Body → Footer).
+Without proper order, data transmission would be mixed and messed up (e.g., a webpage's footer appearing where the header should be).
+File Download Example: A file might be saved in a corrupted way and won't work clearly if the parts are not ordered correctly.
+Connection Establishment:
+TCP is a connection-oriented session where it must connect clearly.
+It uses a "HAND SHAKE 3-way" for connecting.
+Before sending any data, it will first establish the connection.
+The Three-Way Handshake Process:
+SYN: Client says "CAN I CONNECT?".
+SYN-ACK: Server says "Yes I acknowledge".
+ACK: Client confirms.
+
+--------------------------------------------------------------------------------
+Page 8: TCP Reliability & Introduction to UDP
+TCP Connection & Delivery:
+Two computers will first establish the connection method before transferring the data.
+Three-Way Handshake Diagram:
+Sender sends SYN to Receiver.
+Receiver sends SYN/ACK back to Sender.
+Sender sends ACK.
+Once this is done, the data will then be delivered.
+TCP guarantees the delivery of the data.
+If anything goes wrong with any data packet, TCP will resend them without any problem.
+UDP (User Datagram Protocol)
+UDP is also used for sending and receiving data.
+It is a connection-less oriented protocol.
+It does not establish a session and does not guarantee that data has been delivered.
+The sender sends data and does not really care if the data is received at the other end.
+
+--------------------------------------------------------------------------------
+Page 9: UDP Characteristics & Use Cases
+UDP Workflow:
+It does not use SYN/ACK before or during sending.
+It does not care if the receiver is getting the data or not.
+UDP is known as the "fire & forget protocol" because it sends data and doesn't care what happens to it.
+No data guarantee transmission can be held by UDP.
+"UDP is faster than TCP".
+Characteristics of UDP:
+Connection-less.
+No guarantee of delivery.
+Faster.
+No ordering.
+Used In:
+Video streaming.
+Online games.
+Voice calls (e.g., Zoom, WhatsApp)
