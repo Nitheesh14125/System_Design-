@@ -1,0 +1,44 @@
+Page 1: Domain Name System (DNS) Overview
+DNS: Domain Name System
+Definition: DNS is a system that converts domain names into IP addresses.
+Purpose: Humans cannot remember all the application IP addresses required when the internet and machine network communicate. Every system has its own unique IP address.
+The Problem: While we know names like google.com, youtube.com, or amazon.com, the internet communicates via IP addresses.
+The Core Idea: Without DNS, you would have to remember a number like 142.250.193.14. Since these numbers are hard to remember, a DNS conversion is performed.
+Workflow: Whenever a user enters a URL (e.g., www.google.com), it first goes to the DNS server and then eventually to the target web server.
+
+--------------------------------------------------------------------------------
+Page 2: DNS Resolution Process
+DNS Resolution: When a user types a URL, the system finds the IP address through several steps:
+Browser Cache: The browser checks its own cache memory to see if the IP address is already stored. If found, the connection starts immediately.
+Operating System (OS) Cache: If not in the browser, the OS cache is checked (e.g., via a ping command).
+DNS Resolver: If the OS does not know, the request goes to the DNS Resolver (Example: Google DNS is 8.8.8.8). The resolver finds the IP by querying other DNS servers.
+Root DNS Server: The resolver asks the Root DNS server. While it doesn't know the exact IP, it directs the resolver to the correct TLD (Top Level Domain) server, such as the one for .com.
+
+--------------------------------------------------------------------------------
+Page 3: TLD, Authoritative Servers & Final Procedure
+TLD & Authoritative Servers:
+TLD Domain: Includes extensions like .com, .org, .net, and .edu. The TLD server responds by telling the resolver to "Ask the authoritative server for google.com".
+Authoritative DNS Server: This server contains the actual record and provides the final mapping (e.g., google.com → 142.250.193.14).
+Response: The resolver sends this IP address back to the browser.
+Actual Procedure Summary:
+Type google.com.
+Browser checks DNS cache.
+OS cache is checked.
+Request goes to DNS resolver.
+Resolver queries DNS root server.
+Root server directs to TLD server.
+TLD server points to the Authoritative server.
+Browser connects to the server using the IP.
+HTTP request is sent.
+
+--------------------------------------------------------------------------------
+Page 4: DNS Caching & Server Types
+DNS Caching:
+To make the internet faster, DNS results are cached temporarily.
+TTL (Time to Live): This mapping is handled by TTL; once it expires, the DNS must resolve the address again.
+Note: This entire cycle happens in the "blink of an eye".
+Types of DNS Servers:
+Root DNS Server: The top level of the DNS hierarchy that directs queries to TLD servers.
+Top Level Domain (TLD) Server: Handles domain endings like .com, .org, .edu, and .in.
+Authoritative Server: Stores the actual domain-to-IP mapping (Example: amazon.com → 205.251.242.103).
+Implementation Note: Authoritative servers have this data because whenever a domain is bought, the owner registers the domain name into it.
