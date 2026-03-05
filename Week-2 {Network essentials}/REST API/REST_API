@@ -1,0 +1,46 @@
+Page 1: REST API Fundamentals
+REST API'S: Representational State Transfer
+Definition: A REST API is a way for different software systems to communicate with each other over HTTP.
+Purpose: REST APIs are presented within the HTTP protocol to facilitate communication, allowing clients like web browsers or mobile applications to request data or perform operations on a server.
+Core Components: In a REST API system, there are two primary components:
+Client: Sends the request.
+Server: Sends the response.
+Format: Communication typically occurs via HTTP, and data is usually exchanged in JSON format.
+Endpoints: A REST API works through endpoints, which are simply URLs (e.g., HTTPS://Youtube.com/Nitheen/).
+Workflow: The client requests a specific endpoint, and the server provides the corresponding response.
+
+--------------------------------------------------------------------------------
+Page 2: Methods, Formats, and Benefits
+Communication and Methods:
+The REST API serves as the core foundation for transferring data between the client/browser and the server.
+When a client sends a request to an endpoint, the server responds with relevant information (e.g., user data).
+HTTP Methods used in REST: GET, POST, PUT, PATCH, and DELETE.
+Example: GET /api/user is a request from the client to the server for user information.
+JSON (JavaScript Object Notation): This is the most common data format for REST APIs because it is lightweight and easy to use.
+RESTful Webserver: A web server that uses REST APIs for communication.
+Benefits of REST APIs:
+Simple and Standard.
+Scalable and Stateless.
+High Performance.
+Supports Caching.
+
+--------------------------------------------------------------------------------
+Page 3: CRUD Mapping and Statelessness
+CRUD Mapping to HTTP Methods: REST APIs map standard database operations (CRUD) to specific HTTP methods:
+C - Create: POST.
+R - Read: GET.
+U - Update: PUT, PATCH.
+D - Delete: DELETE.
+Status Codes: The server uses status codes to communicate the result of a request:
+200: Successful.
+201: Created.
+204: Accidental sent (No Content).
+400: Client mistake.
+401: Unauthorized access.
+403: Forbidden entry.
+404: Page/Resource Not Found.
+429: Too many requests.
+500: Internal server error.
+Stateless Architecture:
+Statelessness means that in a REST architecture, each request from the client must contain all the information needed for the server to process it.
+The server does not store session information between separate requests.
