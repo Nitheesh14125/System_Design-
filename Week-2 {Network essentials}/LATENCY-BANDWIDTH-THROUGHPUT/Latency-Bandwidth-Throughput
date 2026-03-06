@@ -1,0 +1,80 @@
+Page 1: Latency Fundamentals
+Latency:
+Also known as delay.
+Definition: Latency is the time taken for data to travel from the client to the server and the server back to the client.
+In simple terms, it is a delay in computation.
+Low Latency (↓): Results in a faster response time (↑).
+Example: If you send a request to a server and it responds in 1000 Nanoseconds, the latency is 1000 Ns.
+Note: Maximum latency is usually measured in ms (milliseconds).
+Real-world Example: When you click "submit" or any button to load something new, the time taken to load is the latency.
+Latency defines how long it takes for an entire message to completely arrive at its destination from the moment the first bit was sent.
+Components of Latency (T):
+Latency is the sum of all the following delays:
+Transmission delay
+Propagation delay
+Queuing delay
+Processing delay
+
+--------------------------------------------------------------------------------
+Page 2: Transmission Delay & Bandwidth
+Transmission Delay:
+The time taken to place the complete data packet onto the transmission medium.
+It is the time spent by the sender placing the data that is ready to be transferred.
+Bandwidth:
+It is the maximum amount of data capacity that can be transmitted through a network per second.
+It represents how much data can be transmitted in the real world in one second.
+Analogy: Think of it as the size of a channel; it determines how much data is transferred per second.
+
+--------------------------------------------------------------------------------
+Page 3: Bandwidth Calculations & Propagation Delay
+Bandwidth Example:
+100 MBPS means 100 MB of data can be transferred in 1 second.
+Rule: The more bandwidth you have, the more data can be handled between the sender and receiver.
+Formula: Transmission time= 
+Bandwidth
+Message size
+​
+ 
+Calculation Example:
+Message size: 1 GB (1000 MB)
+Bandwidth: 100 MBPS
+Transmission time= 
+100
+1000
+​
+ =10 ms (time to be ready for transmission).
+Propagation Delay:
+The time it takes for a single bit to travel from Device A to Device B.
+This is the actual travelling time taken within a media.
+Formula: Propagation= 
+Propagation Speed
+Distance
+​
+ 
+
+--------------------------------------------------------------------------------
+Page 4: Queuing & Processing Delays
+Queuing Delay:
+The third component of latency.
+It is the time needed for each intermediate or end device to hold a message before it can be processed.
+This represents the time a message spends in memory waiting for its turn.
+Important: Queuing time is not a fixed factor; it changes based on the load imposed on the network.
+Processing Delay:
+How much time a node takes to process the message.
+The time taken to process a request that has been sent by a device.
+
+--------------------------------------------------------------------------------
+Page 5: Throughput
+Throughput:
+Throughput is the actual amount of data successfully transferred per second.
+Theoretical vs. Real: Even if a network has high bandwidth, the real data transfer rate might be lower due to congestion or delays.
+Throughput represents real performance, showing how much data was actually received by a device.
+Example:
+Bandwidth = 100 Mbps
+Actual transfer = 70 Mbps
+Throughput = 70 Mbps
+High throughput results in great overall speed.
+Summary Comparison:
+Latency: Delay in communication.
+Bandwidth: Maximum data capacity.
+Throughput: Actual data transfer rate.
