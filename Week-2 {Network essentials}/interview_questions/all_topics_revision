@@ -194,3 +194,72 @@ Synchronizes sequence numbers
 Establishes a reliable communication channel
 
 Good answer overall. Your networking foundation is getting stronger.
+Question 4
+Explain REST API and describe the role of GET, POST, PUT, DELETE. Also mention two HTTP status codes.
+
+Score: 8.5 / 10
+
+Your Answer (summary):
+You explained that REST stands for Representational State Transfer and is a way for different systems (client and server) to communicate over HTTP. You described the HTTP methods GET, POST, PUT/PATCH, and DELETE and listed several HTTP status codes such as 200, 201, 400, 401, 403, 404, 429, and 500.
+
+Evaluation:
+Strong answer. You correctly covered:
+
+REST definition
+
+Client–server communication
+
+HTTP methods and their purposes
+
+Status codes with meanings
+
+Minor improvements:
+
+Mention that REST APIs are stateless.
+
+Clarify that resources are accessed through API endpoints (URLs).
+
+You were asked for two status codes but giving more is fine.
+
+Correct Interview Answer (clean version):
+
+REST (Representational State Transfer) is an architectural style used for designing APIs that allow communication between a client and a server over HTTP.
+
+In REST APIs, resources are accessed using endpoints (URLs) and operations are performed using HTTP methods.
+
+Common HTTP methods:
+
+GET
+Used to retrieve data from the server.
+
+Example
+GET /api/users
+
+POST
+Used to create a new resource on the server.
+
+Example
+POST /api/users
+
+PUT
+Used to update an existing resource completely.
+
+Example
+PUT /api/users/10
+
+DELETE
+Used to remove a resource from the server.
+
+Example
+DELETE /api/users/10
+
+REST APIs are stateless, meaning each request contains all the information needed for the server to process it.
+
+Common HTTP status codes:
+
+200 – Request successful
+201 – Resource created successfully
+404 – Resource not found
+500 – Internal server error
+
+Very good answer overall. You clearly understand REST fundamentals.
