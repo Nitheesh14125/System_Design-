@@ -62,3 +62,83 @@ The server processes the request and sends an HTTP response containing HTML, CSS
 The browser renders the webpage for the user.
 
 Good answer overall. The flow understanding is mostly correct, which is the main goal in system design basics.
+
+
+Question 2
+What is the difference between TCP and UDP, and give two real-world use cases for each.
+
+Score: 7.5 / 10
+
+Your Answer (summary):
+You explained that TCP is a connection-oriented protocol that establishes a connection before data transfer, ensures ordered delivery, supports error correction, and guarantees reliable transmission using mechanisms such as the 3-way handshake. You also mentioned that it is slower and used for tasks like webpage loading and file downloading.
+
+For UDP, you explained that it does not establish a connection, does not guarantee delivery or ordering, and is faster. You gave examples such as video streaming.
+
+Evaluation:
+Your conceptual understanding is good. You correctly identified:
+
+Connection-oriented vs connectionless
+
+Reliability differences
+
+Error handling in TCP
+
+Speed advantage of UDP
+
+Real-world usage like streaming
+
+However, a few corrections:
+
+UDP is connectionless, not connection-oriented.
+
+TCP 3-way handshake establishes connection, it does not transfer data itself.
+
+Webpages themselves use HTTP over TCP, not directly TCP for images/video.
+
+UDP examples could be expanded beyond streaming.
+
+Correct Interview Answer (clean version):
+
+TCP (Transmission Control Protocol) is a connection-oriented protocol that establishes a connection between client and server before data transmission. It ensures reliable communication through acknowledgments, retransmissions, and ordered delivery of packets.
+
+Characteristics of TCP:
+
+Connection-oriented
+
+Reliable data delivery
+
+Ordered packet transmission
+
+Error detection and retransmission
+
+Slower due to overhead
+
+Real-world uses of TCP:
+
+Web browsing (HTTP / HTTPS)
+
+File downloads (FTP)
+
+Email communication (SMTP)
+
+UDP (User Datagram Protocol) is a connectionless protocol that sends data without establishing a connection. It does not guarantee delivery, ordering, or error correction, which makes it faster and suitable for real-time applications.
+
+Characteristics of UDP:
+
+Connectionless communication
+
+No acknowledgment system
+
+No guaranteed delivery
+
+Faster with minimal overhead
+
+Real-world uses of UDP:
+
+Video streaming
+
+Online gaming
+
+Voice calls (VoIP)
+
+Good performance. You clearly understand the core networking concepts.
