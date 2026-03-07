@@ -1,0 +1,64 @@
+Question 1
+Explain what happens when a user types google.com in a browser and presses Enter.
+
+Score: 7 / 10
+
+Your Answer (summary of what you wrote):
+You explained that the browser first performs DNS resolution to convert google.com into an IP address. The browser checks browser cache, then OS cache, then a DNS resolver which queries the root server, TLD server, and authoritative server to get the IP address. After the IP is found, the browser connects to the server. You mentioned HTTP request and the TCP 3-way handshake (SYN, SYN-ACK, ACK) before data transfer and browser rendering.
+
+Evaluation:
+You correctly included:
+
+DNS resolution flow
+
+DNS hierarchy (root → TLD → authoritative)
+
+TCP 3-way handshake
+
+HTTP request
+
+Server response and rendering idea
+
+However, a few points need correction or clearer ordering:
+
+TCP connection happens before the HTTP request, not after.
+
+The 3-way handshake is used to establish the connection, not to transfer data.
+
+The server sends HTTP response (HTML, CSS, JS), which the browser renders.
+
+Correct Interview Answer (clean version):
+
+The user types google.com in the browser.
+
+The browser checks its DNS cache for the IP address.
+
+If not found, the request goes to the OS cache.
+
+If still not found, the request is sent to a DNS resolver.
+
+The resolver queries:
+
+Root DNS server
+
+TLD server (.com)
+
+Authoritative DNS server
+
+The authoritative server returns the IP address of google.com.
+
+The browser now establishes a TCP connection with the server using a 3-way handshake:
+
+SYN
+
+SYN-ACK
+
+ACK
+
+After the connection is established, the browser sends an HTTP request (for example, GET /).
+
+The server processes the request and sends an HTTP response containing HTML, CSS, and JavaScript.
+
+The browser renders the webpage for the user.
+
+Good answer overall. The flow understanding is mostly correct, which is the main goal in system design basics.
