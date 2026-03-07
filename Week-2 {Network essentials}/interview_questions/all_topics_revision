@@ -142,3 +142,55 @@ Online gaming
 Voice calls (VoIP)
 
 Good performance. You clearly understand the core networking concepts.
+
+Question 3
+Explain the TCP 3-way handshake.
+
+Score: 8 / 10
+
+Your Answer (summary):
+You explained that TCP uses a 3-way handshake to establish a connection before transferring data. The client sends a SYN request to initiate the connection. The server responds with SYN-ACK to acknowledge and accept the request. The client then sends ACK confirming the connection, after which data transfer begins. You also mentioned that this mechanism ensures reliable and ordered data transfer.
+
+Evaluation:
+Good understanding. You correctly covered:
+
+Connection establishment purpose
+
+SYN → SYN-ACK → ACK sequence
+
+That the handshake happens before data transfer
+
+Reliability benefits
+
+Minor improvements:
+
+Mention client and server roles clearly
+
+Explain that SYN contains a sequence number
+
+The handshake ensures both sides are ready to communicate
+
+Correct Interview Answer (clean version):
+
+The TCP 3-way handshake is a process used to establish a reliable connection between a client and a server before data transmission begins.
+
+Step 1 – SYN
+The client sends a SYN (synchronize) packet to the server to request a connection and initiate communication.
+
+Step 2 – SYN-ACK
+The server receives the SYN request and responds with SYN-ACK, acknowledging the request and agreeing to establish the connection.
+
+Step 3 – ACK
+The client sends an ACK (acknowledgment) packet back to the server confirming the connection.
+
+After these three steps, the TCP connection is established and data transfer can begin.
+
+Purpose of the handshake:
+
+Ensures both client and server are ready
+
+Synchronizes sequence numbers
+
+Establishes a reliable communication channel
+
+Good answer overall. Your networking foundation is getting stronger.
