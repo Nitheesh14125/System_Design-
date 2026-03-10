@@ -1,0 +1,100 @@
+Page 1: OS Concepts & Program vs. Process
+Week - III ⇒ OS CONCEPTS
+Topics: Threads vs. Processes, CPU scheduling & context switching, I/O Blocking & Async I/O, Virtual Memory & Paging, Filesystem & Storage
+.
+Threads Vs Process
+Firstly, Program:
+A program is a sequence of instructions written in a programming language
+.
+This code will be interpreted or compiled into binary code
+.
+It is loaded into memory to execute the running
+.
+A program can be a simple script or a group of programs called Software, which contains blocks of programs
+.
+Process:
+A process is simply an instance of a program that is being executed
+.
+A program under execution or in a currently running state is called a process
+.
+
+--------------------------------------------------------------------------------
+Page 2: Process Structure & Memory Space
+Execution Flow: A program under execution is called a process
+.
+Memory Segmentation: A process is divided into specific segments based on the program:
+Code Segment: Contains the executable code
+.
+Data Segment: Stores global variables
+.
+Heap: Dynamic memory allocator
+.
+Stack: Smallest storage location used to hold temporary data, local variables, function parameters, and function calls
+.
+Registers: Located directly within the CPU to hold data
+.
+Key Characteristics:
+Each process has its own separate memory space; therefore, one process cannot corrupt another
+.
+Examples: Applications like Chrome, VS Code, and Spotify each run as a separate process
+.
+A process has its own memory space, resources, and CPU state
+.
+Process Life Cycle States: New → Ready ↔ Running → Terminated (with a Waiting state available)
+.
+
+--------------------------------------------------------------------------------
+Page 3: Thread Definition & Shared Resources
+Thread:
+A thread is the smallest unit of execution inside a process
+.
+A process can contain multiple threads
+.
+Threads inside the same process share memory and resources
+.
+Threads allow for concurrent execution
+.
+Single vs. Multi-Thread Process:
+In a multi-thread process, each thread has its own registers and stack
+.
+However, they share the code segment, data segment, and heap
+.
+Communication & Risk:
+Shared memory space allows for efficient communication between threads
+.
+Warning: A single thread can potentially corrupt the entire process
+.
+
+--------------------------------------------------------------------------------
+Page 4: Real-world Example & Comparison
+Example (Watching YouTube):
+One thread loads the video
+.
+One thread handles the UI
+.
+One thread downloads data
+.
+Without threads, the application would freeze while performing these tasks
+.
+Comparison Table:
+Feature
+Process
+Thread
+Execution
+Independent program execution
+Part of a process
+Memory
+Own memory space (Separate)
+Shared memory
+Weight
+Heavy weight
+Light weight
+Speed
+Slower execution
+Faster execution
+Communication
+Needs IPC (Inter-Process Communication)
+Faster communication
+What are the five main states in a process life cycle?
+How does a multi-thread process manage its shared heap?
+Explain the difference between a code segment and a data segment.
