@@ -1,0 +1,157 @@
+Page 1: CPU Scheduling Overview
+CPU Scheduling:
+Definition: CPU scheduling is the process by which the operating system decides which process gets the CPU next
+.
+System State: In a system, there are many processes "running" (e.g., Chrome, VS Code, Spotify, Terminal)
+.
+Constraint: However, the CPU can execute only one process at a time per core
+.
+Role of the O.S. Scheduler: The scheduler decides which process runs, when it runs, and how long it runs
+.
+Mechanism: This decision-making mechanism is known as CPU scheduling
+.
+Why is it Needed?
+Without scheduling, one process could occupy the CPU forever, others would never run, and the system would freeze
+.
+Ensures: Fair CPU usage, better performance, and faster response times
+.
+
+--------------------------------------------------------------------------------
+Page 2: Process States & Ready Queue
+Process State: A process moves through several stages before running
+:
+New: Process is created
+.
+Ready: Process is ready to run but waiting for the CPU
+.
+Running: Process is currently executing
+.
+Waiting: Process waits for I/O (disk, keyboard, network)
+.
+Terminated: Process finishes execution
+.
+Ready Queue:
+All processes waiting for the CPU are stored in the Ready Queue
+.
+Example: Process A, B, C, D... are lined up in the queue
+.
+The CPU scheduler picks one process from this queue to execute
+.
+CPU Scheduling Types:
+Non-preemptive scheduling: Once a process gets the CPU, it keeps running until it finishes or moves to the waiting list
+.
+
+--------------------------------------------------------------------------------
+Page 3: Non-Preemptive Scheduling & FCFS
+Non-Preemptive Scheduling (Cont.):
+The operating system cannot interrupt the process while it is executing
+.
+Example: If Process A starts running and Process B arrives, B must wait until A finishes
+.
+The CPU will not switch to another process until the current one is done
+.
+Algorithms:
+FCFS (First Come First Served): The simplest CPU scheduling algorithm
+.
+Mechanism: Processes are executed in the order they arrive
+.
+The process that enters the ready queue first gets the CPU first (served like a queue)
+.
+Note: If a long process comes first, shorter processes must wait; this problem is called the CONVOY EFFECT
+.
+
+--------------------------------------------------------------------------------
+Page 4: SJF & Preemptive Scheduling
+SJF (Shortest Job First):
+This algorithm selects the process with the smallest burst time (execution time) first
+.
+Instead of arrival order, it prioritises the shortest specific time
+.
+Example: For P1 (5ms), P2 (2ms), and P3 (3ms), the order would be P2 → P3 → P1
+.
+Preemptive CPU Scheduling:
+Definition: The operating system can interrupt a running process and give the CPU to another process
+.
+A process does not always run until completion; for example, if a higher priority process arrives, the CPU switches
+.
+Context Switching: This switching happens through a mechanism called context switching
+.
+Impact: It improves system responsiveness, which is why modern operating systems use it
+.
+Algorithms: Round Robin, Shortest Remaining Time, and Priority Scheduling
+.
+
+--------------------------------------------------------------------------------
+Page 5: Round Robin & SRTF
+Round Robin Scheduling:
+One of the most widely used scheduling algorithms
+.
+Time Quantum: Each process gets a fixed time slice (e.g., 2ms)
+.
+If a process is not finished within its quantum, it is moved back to the ready queue
+.
+Usage: Popularly used in Linux, Windows, and modern OS
+.
+Shortest Remaining Time First (SRTF):
+This is the preemptive version of SJF
+.
+The CPU always works on the process with the smallest remaining execution time
+.
+
+--------------------------------------------------------------------------------
+Page 6: Priority Scheduling
+SRTF (Cont.):
+If P1 is running (10ms) and P3 arrives with a shorter burst time (2ms), the CPU switches immediately
+.
+Priority Scheduling:
+Each process is assigned a priority value
+.
+The higher priority process gets the CPU first
+.
+Example: P1 (priority 3), P2 (priority 1), P3 (priority 2). The order is P2 → P3 → P1
+.
+
+--------------------------------------------------------------------------------
+Page 7: Context Switching Definition
+Context Switching:
+Definition: The process of saving the state of the currently running process and loading the state of another so the CPU can switch execution
+.
+Sequence: CPU stops A → Saves A's state → Loads B → CPU runs B
+.
+The OS performs this whenever it needs to switch between processes or threads
+.
+What is "Context"? Context is the information needed to resume a process, including
+:
+CPU registers, Program counter, Stack pointer, Process state, and MMU
+.
+Steps in Context Switching:
+The running process is interrupted
+.
+The OS saves the current process state in the PCB (Process Control Block)
+.
+
+--------------------------------------------------------------------------------
+Page 8: Steps & Overhead of Context Switching
+Steps (Cont.): 3.  The scheduler selects another process from the ready queue
+. 4.  The OS loads the saved state of that process
+. 5.  CPU resumes execution of the new process
+.
+Significance:
+It creates the "illusion" that multiple processes run simultaneously
+.
+Without it, multitasking would be impossible; it allows for responsive systems and efficient CPU usage
+.
+Context Switching Overhead:
+Context switching is not free
+.
+During switching, the CPU is not executing user programs; memory structures must be updated, and registers must be saved/restored
+.
+This time is called context switching overhead
+.
+
+--------------------------------------------------------------------------------
+Page 9: Thread Context Switching
+Threads also require context switching
+.
+However, thread switching is faster than process switching because threads share memory
+.
