@@ -1,0 +1,108 @@
+Page 1: Virtual Memory Fundamentals
+Virtual Memory & Paging
+The Problem: Limited RAM. Every program needs memory (RAM) to run, including space for instructions, stack, variables, and the heap
+.
+Example: If you have 8GB RAM but your programs (Chrome, VS Code, and Games) require a total of 11GB, the RAM is insufficient
+.
+Definition: Virtual memory is a technique used by the operating system to use disk space as an extension of RAM
+.
+Core Idea: It is a memory management technique that allows programs to use more memory than is physically available by temporarily storing inactive memory pages on disk
+.
+Simplified Formula: RAM + DISK = Virtual Memory
+.
+Disk Role: The disk acts like extra memory
+.
+Swap Space: The specific disk area used as extra memory is known as Swap space
+.
+System Capacity Example: 8GB RAM + 6GB Disk Space = 14GB Total System Memory
+.
+
+--------------------------------------------------------------------------------
+Page 2: Demand Paging & Address Space
+Key Idea of Virtual Memory:
+The OS does not load the entire program into RAM; instead, it loads only the parts currently needed (e.g., specific code, stack, or data segments)
+.
+For example, if only 10% of a program is used at a time, only that 10% is loaded into RAM while the rest remains on the disk
+.
+Demand Paging:
+Virtual memory uses a technique called Demand Paging
+.
+A page of memory is loaded only when the program needs it
+.
+Example: If a program needs a calculate_tax() function, the OS loads only the memory containing that function; other functions stay on the disk
+.
+Virtual Address Space:
+Each program "thinks" it has its own large, private memory space (e.g., 4GB)
+.
+In reality, physical RAM (e.g., 8GB) is shared between many processes
+.
+
+--------------------------------------------------------------------------------
+Page 3: Paging vs. Contiguous Allocation
+Virtual Address vs. Physical Memory:
+This creates an illusion of a virtual address space
+.
+A program uses a Virtual Address (e.g., 0x2340), which the system maps to a Physical Address (the actual location in RAM hardware)
+.
+Key Points:
+Programs larger than the physical RAM can run
+.
+Multiple programs can run simultaneously
+.
+Ensures process isolation
+.
+Provides efficient memory usage, as active memory stays in RAM
+.
+Paging:
+Before paging, the OS used contiguous memory allocation, where a process had to be stored in one continuous block of RAM
+.
+Problem: This often led to fragmentation, where there was enough total free memory but not enough continuous memory to fit a new process
+.
+Page Fault Intro:
+If the CPU requests memory that is not currently in RAM, a page fault occurs
+.
+Steps to resolve: Pause process → Load page from disk → Update mapping → Resume process
+.
+
+--------------------------------------------------------------------------------
+Page 4: Pages and Frames
+How Paging Solves Fragmentation:
+Paging divides memory into small fixed-size blocks
+.
+Pages: These are pieces of a program in virtual memory
+.
+Frames: These are pieces of physical RAM
+.
+Mapping Example:
+A 16KB program might be divided into four 4KB pages (Page 0, 1, 2, 3)
+.
+The RAM is similarly divided into equal blocks called frames (Frame 0, 1, 2, 3, 4)
+.
+Page to Frame Mapping: Pages do not need to be stored contiguously in RAM. For example:
+Page 0 → Frame 3
+Page 1 → Frame 0
+Page 2 → Frame 4
+Page 3 → Frame 2
+.
+
+--------------------------------------------------------------------------------
+Page 5: Page Table & Fault Handling
+Page Table:
+The Page Table is used to keep track of where each page is stored in physical frames
+.
+Example mapping: Page 0 is in Frame 3; Page 2 is in Frame 4
+.
+Detailed Page Fault Process:
+A page fault happens when the requested page is not in RAM and must be retrieved from the disk
+.
+Step-by-Step Recovery:
+The CPU detects the page fault
+.
+The OS pauses the running process
+.
+The required page is loaded from the disk into a frame in RAM
+.
+The Page Table is updated with the new mapping
+.
+The process resumes execution
+.
