@@ -1,0 +1,86 @@
+Page 1: File System & File Basics
+Filesystem & Storage
+File System:
+A file system is the structure used by the OS to store and organize data on a disk
+.
+Without a file system: Disk = random bits (0s & 1s)
+.
+With a file system: Disk = organized files + folders
+.
+Core Concept: File system = organization + management
+.
+File:
+A file is a collection of data stored on a disk
+.
+Examples of file extensions: .txt, .jpg (image), .png (image), .mp4 (video), .exe (executable)
+.
+Components of a File: Data + Metadata
+.
+Metadata includes:
+File name
+Size
+Permission
+Owner
+Creation time
+Location on disk
+.
+
+--------------------------------------------------------------------------------
+Page 2: Directory Structure & Storage Allocation
+Directory (Folder Structure):
+A directory organizes files in a tree structure
+.
+Hierarchy Example: Root → Home (contains file.txt, file2.txt) and Images (contains photo.png)
+.
+Internal Storage:
+Files are stored internally as blocks in the disk
+.
+A file is stored in one or more blocks
+.
+Allocation Algorithms:
+Continuous allocation
+Indexed file storage
+Linked allocation
+.
+The OS finds a file (e.g., when you execute open("file.txt")) by identifying which blocks contain each part of the file
+.
+
+--------------------------------------------------------------------------------
+Page 3: Filesystem Types & Storage Hardware
+Filesystem Types:
+Windows: NTFS, FAT32, exFAT
+.
+Linux: ext4, ext3
+.
+MAC: APFS
+.
+File Operations:
+Create, Read, Write, Append, Delete, Open, Close
+.
+Storage Types:
+HDD (Hard Disk Drive):
+Mechanical (spinning disk)
+.
+Slower and cheaper
+.
+Components: Has a platter (spinning disk) and a Read/Write head
+.
+Process: Head moves to the correct track (Seek Time) → Disk rotates → Data is read
+.
+SSD (Solid-State Drive):
+No moving parts
+.
+Faster but more expensive
+.
+
+--------------------------------------------------------------------------------
+Page 4: SSD Performance
+How SSD Works:
+SSDs use Flash memory
+.
+They provide direct access to memory cells, leading to faster performance
+.
+Disk Access Time Formula: Seek Time+Rotational Delay+Transfer Time
+.
+Because SSDs use direct access rather than mechanical movement, they are significantly faster than HDDs
+.
